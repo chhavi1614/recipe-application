@@ -5,6 +5,20 @@
     <title>Recipe Home</title>
 </head>
 <body>
-<h1>My Recipes!</h1>
-</body>
-</html>
+<h2 th:text="'My Recipes'"> List of Owners...</h2>
+<table>
+
+    <thead>
+    <tr>
+        <th style="width: 150px;" > Name </th>
+        <th style="width: 150px;" >Directions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="recipe : ${recipes}">
+        <td th:text="${recipe.description}">Abc</td>
+        <td th:text="${recipe.directions}">Tasty Goodnees</td>
+    </tr>
+    </tbody>
+</table>
+</body></html>

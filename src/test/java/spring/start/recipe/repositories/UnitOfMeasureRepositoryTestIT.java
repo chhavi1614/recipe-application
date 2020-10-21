@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import spring.start.recipe.domain.UnitOfMeasure;
 
@@ -26,14 +25,14 @@ class UnitOfMeasureRepositoryTestIT {
 
     @Test
     //@DirtiesContext
-    void findByDescription() {
+    void findByDescription() throws Exception{
         Optional<UnitOfMeasure> uomOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
         assertEquals("Teaspoon",uomOptional.get().getDescription());
 
     }
 
     @Test
-    void findByDescriptionCup() {
+    void findByDescriptionCup() throws Exception{
         Optional<UnitOfMeasure> uomOptional = unitOfMeasureRepository.findByDescription("Cup");
         assertEquals("Cup",uomOptional.get().getDescription());
 
